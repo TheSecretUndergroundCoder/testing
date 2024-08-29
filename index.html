@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload & Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js"></script>
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js"></script>
+    <!-- Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-storage.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Upload & Viewer</h1>
+        
+        <!-- Login Form -->
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <button id="logoutBtn" class="hidden">Logout</button>
+            </form>
+        </div>
+
+        <!-- Image Upload Form -->
+        <div class="upload-container hidden">
+            <h2>Upload Image</h2>
+            <form id="uploadForm">
+                <input type="file" id="imageUpload" accept="image/*" required>
+                <input type="text" id="imageTitle" placeholder="Image Title" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="gallery-container hidden">
+            <h2>Image Gallery</h2>
+            <div id="gallery"></div>
+        </div>
+        
+        <!-- Modal for Viewing Image -->
+        <div id="imageModal" class="modal hidden">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div id="imageCaption"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
